@@ -6,7 +6,7 @@ class TodoCreate(BaseModel):
 class TodoResponse(BaseModel):
     id: int
     title: str
-    completed: bool = False
+    complete: bool
 
     class Config:
         orm_mode = True
