@@ -22,6 +22,8 @@ Una vez las imagenes esten construidas y los contenedores levantados la aplicaci
 
 ### Error de conección
 
+<img width="400" alt="Captura de Pantalla 2024-04-15 a la(s) 01 27 07" src="https://github.com/matias-harding/EDIG-todo/assets/2810449/ac6d0b92-976c-470c-beec-199f5712fa66">
+
   Si llegara a ocurrir un error de conección una vez los contenedores esten arriba, intenta bajarlos y volver a correrlos:
 
    ```
