@@ -6,6 +6,7 @@
 
 **Docker** instalado en el sistema. Aqui un link a la [página oficial de Docker](https://www.docker.com/get-started).
 
+
 ### Configuración del Proyecto
 
 1. **Construcción y ejecución del contenedor Docker**
@@ -20,9 +21,10 @@
 
 Una vez las imagenes esten construidas y los contenedores levantados la aplicacion estra disponible en [http://localhost:3000](http://localhost:3000).
 
+
 ### Error de conección
 
-<img width="400" alt="Captura de Pantalla 2024-04-15 a la(s) 01 27 07" src="https://github.com/matias-harding/EDIG-todo/assets/2810449/ac6d0b92-976c-470c-beec-199f5712fa66">
+   <img width="400" alt="Captura de Pantalla 2024-04-15 a la(s) 01 27 07" src="https://github.com/matias-harding/EDIG-todo/assets/2810449/ac6d0b92-976c-470c-beec-199f5712fa66">
 
   Si llegara a ocurrir un error de conección una vez los contenedores esten arriba, intenta bajarlos y volver a correrlos:
 
@@ -32,6 +34,9 @@ Una vez las imagenes esten construidas y los contenedores levantados la aplicaci
    ```
 
   Si el error persiste considera hacer una instalacion local:
+
+
+### Instalacion local
 
   - Frontend (./frontend)
 
@@ -70,12 +75,6 @@ Una vez las imagenes esten construidas y los contenedores levantados la aplicaci
   ```
    docker run --name edig-mysql -e MYSQL_USER=edig MYSQL_PASSWORD=3dig_t0D0 -e MYSQL_DATABASE=EDIG_TODO -p 3307:3306 -d edig-todo-mysql
   ```
-
-
-### Recuerda que
-
-- **Docker debe estar corriendo**
-- **El puerto 3000 debe estar disponible**
 
 ---
 
