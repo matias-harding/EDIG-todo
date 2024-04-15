@@ -24,7 +24,7 @@
 Una vez las imagenes esten construidas y los contenedores levantados la aplicacion estra disponible en [http://localhost:3000](http://localhost:3000).
 
 
-### Error de conección
+### Error de conexión
 
    <img width="400" alt="Captura de Pantalla 2024-04-15 a la(s) 01 27 07" src="https://github.com/matias-harding/EDIG-todo/assets/2810449/ac6d0b92-976c-470c-beec-199f5712fa66">
 
