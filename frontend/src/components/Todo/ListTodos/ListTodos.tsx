@@ -15,7 +15,7 @@ interface Todo {
 const ListTodos = (props: { todos: Todo[], getTodos: () => void }) => {
 
   const onComplete = async (todoId: number) => {
-    await fetch(`http://localhost:8000/api/update/${todoId}`, {
+    await fetch(`http://localhost:8000/api/todo/update/${todoId}`, {
       method: 'PATCH',
       headers: {
         'Content-Type': 'application/json',
@@ -28,7 +28,7 @@ const ListTodos = (props: { todos: Todo[], getTodos: () => void }) => {
   };
 
   const onDelete = async (todoId: number) => {
-    await fetch(`http://localhost:8000/api/delete/${todoId}`, {
+    await fetch(`http://localhost:8000/api/todo/delete/${todoId}`, {
       method: 'DELETE',
       headers: {
         'Content-Type': 'application/json',
