@@ -4,42 +4,26 @@
 
 ### Pre-requisitos
 
-Antes de comenzar, asegurarse de tener instalado lo siguiente en el sistema:
-
-- **Python 3.12** o una versión compatible.
-- **pip 23.2.1** o una versión compatible.
+**Docker** instalado en el sistema. Aqui un link a la [página oficial de Docker](https://www.docker.com/get-started).
 
 ### Configuración del Proyecto
 
 1. **Construcción y ejecución del contenedor Docker**
 
-   En la raíz del proyecto ejecuta lo siguiente para el front y DB Dockerizado:
+   Desde la raíz del proyecto ejecuta:
 
    ```
-   docker-compose run --build
+   docker-compose up --build
    ```
 
-2. **Instalación de dependencias**
+### Acceso a la Aplicación
 
-   Desde la raiz del proyecto `cd backend` y ejecutar:
+Una vez las imagenes esten construidas y los contenedores levantados la aplicacion estra disponible en [http://localhost:3000](http://localhost:3000).
 
-   ```
-   pip3 install -r requirements.txt
-   ```
+### Recuerda que
 
-### Ejecución de la Aplicación
-
-Si la instalación fue exitosa, inicia el servidor de desarrollo con:
-
-```
-uvicorn app:app --reload
-```
-
-La aplicación debería estar ya disponible en [http://localhost:3000](http://localhost:3000).
-
-### Problemas Comunes
-
-Si encuentras errores durante la instalación de las dependencias, asegúrate de que tu pip esté actualizado y que Python 3.12 esté configurado como tu versión predeterminada de Python.
+- **Docker debe estar corriendo**
+- **El puerto 3000 debe estar disponible**
 
 ---
 
