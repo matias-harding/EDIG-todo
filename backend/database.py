@@ -5,7 +5,7 @@ from sqlalchemy.orm import sessionmaker
 # MySQL configuration
 username = 'edig'
 password = '3dig_t0D0'
-hostname = 'localhost:3307'
+hostname = 'db'
 database_name = 'EDIG_TODO'
 
 # SQLALCHEMY_DATABASE_URL = "sqlite:///./sql_app.db"
