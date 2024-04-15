@@ -61,7 +61,7 @@ Una vez las imagenes esten construidas y los contenedores levantados la aplicaci
   y luego
 
   ```
-   uvicorn main:app --reload
+   uvicorn app:app --reload
   ```
 
   **NOTA:** en el archivo ./backend/database.py se requiere comentar el hostname y port para Docker y descomentar el hostname y port para Local.
