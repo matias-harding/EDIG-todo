@@ -75,7 +75,7 @@ Una vez las imagenes esten construidas y los contenedores levantados la aplicaci
   y una vez construido
 
   ```
-   docker run --name edig-mysql -e MYSQL_USER=edig MYSQL_PASSWORD=3dig_t0D0 -e MYSQL_DATABASE=EDIG_TODO -p 3307:3306 -d edig-todo-mysql
+   docker run --name edig-mysql -e MYSQL_USER=edig -e MYSQL_PASSWORD=3dig_t0D0 -e MYSQL_DATABASE=EDIG_TODO -p 3307:3306 -d edig-todo-mysql
   ```
 
 ---
