@@ -14,7 +14,7 @@
    Desde la raíz del proyecto ejecuta:
 
    ```
-   docker-compose --build
+   docker-compose up --build
    ```
 
 ### Acceso a la Aplicación
