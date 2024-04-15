@@ -1,5 +1,7 @@
 # EDIG-Todo
 
+<img width="734" alt="Captura de Pantalla 2024-04-14 a la(s) 23 05 24" src="https://github.com/matias-harding/EDIG-todo/assets/2810449/aea2a22b-367a-46f2-8c93-e5827309b341">
+
 ## Instrucciones de Instalación
 
 ### Pre-requisitos
@@ -77,5 +79,3 @@ Una vez las imagenes esten construidas y los contenedores levantados la aplicaci
   ```
 
 ---
-
-<img width="734" alt="Captura de Pantalla 2024-04-14 a la(s) 23 05 24" src="https://github.com/matias-harding/EDIG-todo/assets/2810449/aea2a22b-367a-46f2-8c93-e5827309b341">
