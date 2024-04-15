@@ -22,7 +22,7 @@ Una vez las imagenes esten construidas y los contenedores levantados la aplicaci
 
 ### Error de conección
 
-  Si llegara a ocurrir un error de conección una vez los contenedores esten arriba, intente lo bajarlos y volverlos a correr:
+  Si llegara a ocurrir un error de conección una vez los contenedores esten arriba, intenta bajarlos y volver a correrlos:
 
    ```
    docker-compose down
