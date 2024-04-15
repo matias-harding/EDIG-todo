@@ -1,11 +1,16 @@
 from fastapi import FastAPI
+# from pydantic import BaseSettings
 from pydantic_settings import BaseSettings
 
-
 class Settings(BaseSettings):
-    db_name: str = "EDIG_TODO"
-    user: str = "todo"
-    password: str = "todo"
-    host: str = "localhost"
-    port: int = 5432
+    user: str
+    password: str
+    database: str
+    host: str
+    port: str
+
+    class Config:
+        env_file = ".env"
+
+settings = Settings()
 
