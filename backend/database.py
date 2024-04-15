@@ -5,11 +5,18 @@ from sqlalchemy.orm import sessionmaker
 # MySQL configuration
 username = 'edig'
 password = '3dig_t0D0'
-hostname = 'db:3306'
 database_name = 'EDIG_TODO'
 
+# Docker configuration
+hostname = 'db'
+port = 3306
+
+# Localhost configuration
+# hostname = 'localhost'
+# port = 3307
+
 # SQLALCHEMY_DATABASE_URL = "sqlite:///./sql_app.db"
-SQLALCHEMY_DATABASE_URL = f"mysql+pymysql://{username}:{password}@{hostname}/{database_name}"
+SQLALCHEMY_DATABASE_URL = f"mysql+pymysql://{username}:{password}@{hostname}:{port}/{database_name}"
 
 try:
     engine = create_engine(SQLALCHEMY_DATABASE_URL)
