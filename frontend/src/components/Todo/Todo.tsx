@@ -9,7 +9,6 @@ interface Todo {
   complete: boolean;
 }
 
-
 const Todo = () => {
 
   const [todos, setTodos] = useState<Todo[]>([]);

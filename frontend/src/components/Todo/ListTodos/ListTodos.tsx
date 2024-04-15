@@ -23,7 +23,8 @@ const ListTodos = (props: { todos: Todo[], getTodos: () => void }) => {
         'Access-Control-Allow-Origin': '*',
       },
     })
-    .then(() => props.getTodos());
+    .then(() => props.getTodos())
+    .catch(err => console.log(err));
   };
 
   const onDelete = async (todoId: number) => {
@@ -35,9 +36,8 @@ const ListTodos = (props: { todos: Todo[], getTodos: () => void }) => {
         'Access-Control-Allow-Origin': '*',
       },
     })
-    .then(() => {
-      props.getTodos()
-    });
+    .then(() => { props.getTodos() })
+    .catch(err => console.log(err));
   }
 
   useEffect(() => {
