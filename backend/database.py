@@ -8,12 +8,12 @@ password = '3dig_t0D0'
 database_name = 'EDIG_TODO'
 
 # Docker configuration
-hostname = 'db'
-port = 3306
+# hostname = 'db'
+# port = 3306
 
 # Localhost configuration
-# hostname = 'localhost'
-# port = 3307
+hostname = 'localhost'
+port = 3307
 
 # SQLALCHEMY_DATABASE_URL = "sqlite:///./sql_app.db"
 SQLALCHEMY_DATABASE_URL = f"mysql+pymysql://{username}:{password}@{hostname}:{port}/{database_name}"

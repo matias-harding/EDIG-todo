@@ -1,3 +1,4 @@
+import json
 from typing import List
 from fastapi import FastAPI, Depends, status, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
@@ -37,11 +38,27 @@ def get_todos(db: Session = Depends(get_db)) -> List[TodoResponse]:
 
 @app.post("/api/todo/new", response_model=TodoResponse, status_code=status.HTTP_201_CREATED)
 def new_todo(todo_in: TodoCreate, db: Session = Depends(get_db)) -> TodoResponse:
-    new_todo = Todo(title=todo_in.title)
+
+    # Remove all characters that are not alphabetic
+    variables = {}
+    for char in todo_in.title:
+      if char.isalpha():
+        new_key = f"{len(variables) + 1}"
+        variables[new_key] = char
+
+    new_todo = Todo(title=todo_in.title, variables=variables)
     db.add(new_todo)
     db.commit()
     db.refresh(new_todo)
+
     return new_todo
+
+@app.get("/api/todo/{todo_id}", response_model=TodoResponse, status_code=status.HTTP_200_OK)
+def get_todo(todo_id: int, db: Session = Depends(get_db)) -> TodoResponse:
+    todo = db.query(Todo).filter(Todo.id == todo_id).first()
+    if not todo:
+        raise HTTPException(status_code=404, detail="Todo not found")
+    return todo
 
 @app.patch("/api/todo/update/{todo_id}", response_model=TodoResponse)
 def update_todo(todo_id: int, db: Session = Depends(get_db)) -> TodoResponse:

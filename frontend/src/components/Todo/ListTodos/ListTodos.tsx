@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
 interface Todo {
   id: number;
@@ -13,6 +14,8 @@ interface Todo {
  * @return {JSX.Element} The JSX element representing the list of todos.
  */
 const ListTodos = (props: { todos: Todo[], getTodos: () => void }) => {
+
+  const navigate = useNavigate();
 
   const onComplete = async (todoId: number) => {
     await fetch(`http://localhost:8000/api/todo/update/${todoId}`, {
@@ -40,6 +43,10 @@ const ListTodos = (props: { todos: Todo[], getTodos: () => void }) => {
     .catch(err => console.log(err));
   }
 
+  const editHandler = async (todoId: number) => {
+    navigate(`/edit/${todoId}`)
+  }
+
   useEffect(() => {
     props.getTodos();
   }, [])
@@ -50,13 +57,16 @@ const ListTodos = (props: { todos: Todo[], getTodos: () => void }) => {
         <tbody>
         {(props.todos.length > 0) ? props.todos.map((todo: Todo) => (
             <tr key={todo.id} className='hover:bg-gray-100'>
-              <td className='w-5/12 text-left pl-2'><b>{todo.title}</b></td>
+              <td className='w-3/12 text-left pl-2'><b>{todo.title}</b></td>
               <td className='w-3/12 text-right'>
                 <span className={`rounded-full ${todo.complete ? 'bg-green-200' : 'bg-gray-200'} uppercase px-2 py-1 text-xs font-bold mr-3` }>
                       {todo.complete ? 'Completed' : 'Not Completed'}</span></td>
               <td className='w-2/12 text-right'>
                 <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" 
                         onClick={() => onComplete(todo.id)}> Update</button></td>
+                <td className='w-2/12 text-right'>
+                  <button className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded"
+                          onClick={() => editHandler(todo.id)}> Edit</button></td>
               <td className='w-2/12 text-right'>
                 <button className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded"
                         onClick={() => onDelete(todo.id)}> Delete</button></td>
